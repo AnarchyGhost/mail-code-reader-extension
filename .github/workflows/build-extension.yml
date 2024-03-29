@@ -6,11 +6,14 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
+defaults:
+  run:
+    working-directory: client
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,6 +22,7 @@ jobs:
         with:
           node-version: 20.x
           cache: 'yarn'
+          cache-dependency-path: client/yarn.lock
       - name: Build With Yarn
         run: |
           yarn install
@@ -26,5 +30,5 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: generator-extension
-          path: build/chrome-mv3-prod
+          name: mail-code-extension
+          path: client/build/chrome-mv3-prod
