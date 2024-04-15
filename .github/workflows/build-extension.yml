@@ -27,8 +27,17 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: Archive production artifacts
+      - name: Build With Yarn For Firefox
+        run: |
+          yarn install
+          yarn build --target=firefox-mv2
+      - name: Archive chrome artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mail-code-extension
           path: client/build/chrome-mv3-prod
+      - name: Archive firefox artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mail-code-extension-firefox
+          path: client/build/firefox-mv2-prod
