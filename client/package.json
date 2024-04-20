@@ -1,7 +1,7 @@
 {
   "name": "mail-code-reader-extension",
   "displayName": "Mail code reader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "An extension for reading verification codes from e-mail and inserting them into input fields",
   "author": "Konstantin Markelov <k.markelov@anarchyghost.com>",
   "license": "Apache-2.0",
