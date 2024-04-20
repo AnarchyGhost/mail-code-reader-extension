@@ -9,12 +9,12 @@ plugins {
 }
 
 group = "com.anarchyghost"
-version = "0.0.1"
+version = "0.1.0"
 
 ktor {
     docker {
         jreVersion.set(JavaVersion.VERSION_17)
-        imageTag.set("0.0.1")
+        imageTag.set(version.toString())
         externalRegistry.set(
             io.ktor.plugin.features.DockerImageRegistry.dockerHub(
                 appName = provider { "mail-code-reader-server" },
