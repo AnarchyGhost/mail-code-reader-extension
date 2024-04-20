@@ -6,7 +6,7 @@ Simple browser extension with server for reading verification codes from e-mail 
 Extension: Plasmo, React, antd, TS
 Server: Kotlin, Ktor
 
-**Tested**: Chrome
+**Tested**: Chrome, Firefox
 
 **Build**: node v20.11.1, yarn v1.22.21, jdk 17, gradle 8.4
 
@@ -20,11 +20,17 @@ yarn install
 yarn build
 ```
 
-Result folder: build/chrome-mv3-prod
+For Firefox [(more)](https://docs.plasmo.com/framework/workflows/build)
+
+```
+cd client
+yarn install
+yarn build --target=firefox-mv3
+```
+
+Result folder: build/chrome-mv3-prod or build/firefox-mv3-prod
 
 ### Server
-
-Result folder: build/chrome-mv3-prod
 
 ```
 cd server
@@ -52,6 +58,7 @@ docker run -d -p8080:8080 anarchyghost/mail-code-reader-extension:0.0.1
 2. Follow your browser instructions
 
 - [Chrome](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
+- [Firefox](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
 
 ## Usage
 

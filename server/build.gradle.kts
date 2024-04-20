@@ -46,6 +46,8 @@ dependencies {
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.3")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.3")
 
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
+
     implementation("org.jsoup:jsoup:1.17.2")
     implementation("com.sun.mail:jakarta.mail:2.0.1")
 
