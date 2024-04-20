@@ -23,21 +23,21 @@ jobs:
           node-version: 20.x
           cache: 'yarn'
           cache-dependency-path: client/yarn.lock
-      - name: Build With Yarn
+      - name: Build With Yarn For Chrome
         run: |
           yarn install
           yarn build
       - name: Build With Yarn For Firefox
         run: |
           yarn install
-          yarn build --target=firefox-mv2
-      - name: Archive chrome artifacts
+          yarn build --target=firefox-mv3
+      - name: Archive chrome production artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mail-code-extension
           path: client/build/chrome-mv3-prod
-      - name: Archive firefox artifacts
+      - name: Archive firefox production artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: mail-code-extension-firefox
-          path: client/build/firefox-mv2-prod
+          name: client/mail-code-extension-firefox
+          path: build/firefox-mv3-prod

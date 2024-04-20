@@ -41,8 +41,17 @@
     "typescript": "*"
   },
   "manifest": {
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "mailcodereader@anarchyghost.com"
+      }
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self';"
+    },
     "host_permissions": [
-      "*://*/*"
+      "http://*/*",
+      "https://*/*"
     ],
     "permissions": [
       "contextMenus",

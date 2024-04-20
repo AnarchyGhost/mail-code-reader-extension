@@ -45,7 +45,6 @@ const setValueByAccountId = async (accountIdx: string, tabId: number): Promise<v
         target: {
             tabId,
         },
-        world: 'MAIN',
         func: setValueOnWebpage,
         args: [code],
     });

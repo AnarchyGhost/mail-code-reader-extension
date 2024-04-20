@@ -19,8 +19,7 @@ export const fetchCode = async (url: string, account: AccountModel): Promise<str
             'Content-Type': 'application/json'
         }
     });
-    if (response.ok) {
-        const result = await response.json() as CodeResponseModel;
-        return result.code;
-    } else return '';
+    if (!response.ok) return ''
+    const result = await response.json() as CodeResponseModel;
+    return result.code;
 };
