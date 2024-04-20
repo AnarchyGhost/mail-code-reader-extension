@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: client/mail-code-extension-firefox
-          path: build/firefox-mv3-prod
+          path: client/build/firefox-mv3-prod
