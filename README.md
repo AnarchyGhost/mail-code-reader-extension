@@ -49,7 +49,7 @@ Result folder: build/libs
 #### OR
 
 ```
-docker run -d -p8080:8080 anarchyghost/mail-code-reader-extension:0.0.1
+docker run -d -p8080:8080 anarchyghost/mail-code-reader-extension:0.1.0
 ```
 
 ### Extension
