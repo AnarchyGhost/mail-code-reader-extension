@@ -3,8 +3,9 @@ import type {CodeResponseModel} from '~src/models/CodeResponseModel';
 
 export const setValueOnWebpage = (value: string): void => {
     const element = <HTMLInputElement>document.activeElement;
-    element.value = value;
-    element.dispatchEvent(new Event('input', {}));
+    const event = new ClipboardEvent('paste', {clipboardData: new DataTransfer()});
+    event.clipboardData.setData('text', value);
+    element.dispatchEvent(event);
 };
 
 export const fetchCode = async (url: string, account: AccountModel): Promise<string> => {
@@ -19,7 +20,7 @@ export const fetchCode = async (url: string, account: AccountModel): Promise<str
             'Content-Type': 'application/json'
         }
     });
-    if (!response.ok) return ''
+    if (!response.ok) return '';
     const result = await response.json() as CodeResponseModel;
     return result.code;
 };
