@@ -3,8 +3,10 @@ import type {CodeResponseModel} from '~src/models/CodeResponseModel';
 
 export const setValueOnWebpage = (value: string): void => {
     const element = <HTMLInputElement>document.activeElement;
+    element.value = value;
+    element.dispatchEvent(new Event('input', {}));
     const event = new ClipboardEvent('paste', {clipboardData: new DataTransfer()});
-    event.clipboardData.setData('text', value);
+    event.clipboardData.setData('text/plain', value);
     element.dispatchEvent(event);
 };
 
